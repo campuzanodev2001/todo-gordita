@@ -6,6 +6,7 @@ import { useTasks } from "../hooks/useTasks";
 import { TaskList } from "./TaskList";
 import { TaskForm } from "./TaskForm";
 import { Calendar } from "@/features/calendar/components/Calendar";
+import { TutorialModal } from "@/features/tutorial/components/TutorialModal";
 
 export function HomeClient() {
   const { tasks, loading, addTask, updateTask, deleteTask } = useTasks();
@@ -71,6 +72,8 @@ export function HomeClient() {
         onEditTask={openEditTaskForm}
         onStatusChange={handleStatusChange}
       />
+
+      <TutorialModal />
 
       {formOpen && (
         <TaskForm
